@@ -86,6 +86,7 @@
     description = "João Thallis";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+	gh
     #  thunderbird
     ];
   };
