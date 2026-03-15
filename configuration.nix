@@ -18,15 +18,27 @@
   };
   services.openssh.enable = true;
 
+  users.groups.media = {};
+
   services.jellyfin = {
     enable = true;
+    group = "media";
     openFirewall = true;
   };
 
   services.radarr = {
     enable = true;
+    group = "media";
     openFirewall = true;
   };
+
+  systemd.tmpfiles.rules = [
+    "d /srv/media 2775 root media -"
+    "d /srv/media/movies 2775 root media -"
+    "d /srv/media/tv 2775 root media -"
+    "d /srv/media/music 2775 root media -"
+    "d /srv/media/downloads 2775 root media -"
+  ];
 
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
