@@ -18,6 +18,8 @@
   };
   services.openssh.enable = true;
 
+  services.tailscale.enable = true;
+
   users.groups.media = {};
 
   services.jellyfin = {
