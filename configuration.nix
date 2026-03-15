@@ -23,6 +23,11 @@
     openFirewall = true;
   };
 
+  services.radarr = {
+    enable = true;
+    openFirewall = true;
+  };
+
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
     pkgs.gitMinimal
