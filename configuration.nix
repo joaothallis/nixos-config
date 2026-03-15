@@ -32,6 +32,12 @@
     openFirewall = true;
   };
 
+   services.qbittorrent = {
+    enable = true;
+    group = "media";
+    openFirewall = true;
+  };
+
   systemd.tmpfiles.rules = [
     "d /srv/media 2775 root media -"
     "d /srv/media/movies 2775 root media -"
