@@ -53,6 +53,12 @@
     openFirewall = true;
   };
 
+  services.lidarr = {
+    enable = true;
+    group = "media";
+    openFirewall = true;
+  };
+
   services.prowlarr = {
     enable = true;
     openFirewall = true;
