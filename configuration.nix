@@ -3,7 +3,7 @@
   lib,
   pkgs,
   ...
-} @ args:
+}@args:
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -58,7 +58,7 @@
     openFirewall = true;
   };
 
-   services.qbittorrent = {
+  services.qbittorrent = {
     enable = true;
     group = "media";
     openFirewall = true;
@@ -80,11 +80,11 @@
     pkgs.jellyfin-ffmpeg
   ];
 
-  users.users.root.openssh.authorizedKeys.keys =
-  [
+  users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ8qXHy5C/9jorjd8l7TrcSQx6YeMG5G7wJTD8vO/Mg9"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAM6HLJh0uCHKTrOezHaS8ov6K66Fq5USYjqrL3X64cO joaothallis.developer@gmail.com"
-  ] ++ (args.extraPublicKeys or []); # this is used for unit-testing this module and can be removed if not needed
+  ]
+  ++ (args.extraPublicKeys or [ ]); # this is used for unit-testing this module and can be removed if not needed
 
   system.stateVersion = "25.11";
 }
