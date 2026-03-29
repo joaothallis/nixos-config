@@ -40,6 +40,10 @@
   '';
 
   users.groups.media = { };
+  users.users.media = {
+    isSystemUser = true;
+    group = "media";
+  };
 
   services.jellyfin = {
     enable = true;
@@ -49,6 +53,7 @@
 
   services.lidarr = {
     enable = true;
+    user = "media";
     group = "media";
     openFirewall = true;
   };
@@ -60,6 +65,7 @@
 
   services.qbittorrent = {
     enable = true;
+    user = "media";
     group = "media";
     openFirewall = true;
   };
