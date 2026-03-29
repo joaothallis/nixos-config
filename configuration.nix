@@ -47,12 +47,6 @@
     openFirewall = true;
   };
 
-  services.radarr = {
-    enable = true;
-    group = "media";
-    openFirewall = true;
-  };
-
   services.lidarr = {
     enable = true;
     group = "media";
@@ -72,8 +66,6 @@
 
   systemd.tmpfiles.rules = [
     "d /srv/media 2775 root media -"
-    "d /srv/media/movies 2775 root media -"
-    "d /srv/media/tv 2775 root media -"
     "d /srv/media/music 2775 root media -"
     "d /srv/media/downloads 2775 root media -"
   ];
