@@ -47,6 +47,14 @@
   environment.systemPackages = [
   ];
 
+  users.users.joao = {
+    isNormalUser = true;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ8qXHy5C/9jorjd8l7TrcSQx6YeMG5G7wJTD8vO/Mg9"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAM6HLJh0uCHKTrOezHaS8ov6K66Fq5USYjqrL3X64cO joaothallis.developer@gmail.com"
+    ];
+  };
+
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ8qXHy5C/9jorjd8l7TrcSQx6YeMG5G7wJTD8vO/Mg9"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAM6HLJh0uCHKTrOezHaS8ov6K66Fq5USYjqrL3X64cO joaothallis.developer@gmail.com"
