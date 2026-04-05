@@ -39,49 +39,12 @@
         )
   '';
 
-  users.groups.media = { };
-  users.users.media = {
-    isSystemUser = true;
-    group = "media";
-  };
-
-  services.jellyfin = {
-    enable = true;
-    group = "media";
-    openFirewall = true;
-  };
-
-  services.lidarr = {
-    enable = true;
-    user = "media";
-    group = "media";
-    openFirewall = true;
-  };
-
-  services.prowlarr = {
-    enable = true;
-    openFirewall = true;
-  };
-
   services.qbittorrent = {
     enable = true;
-    user = "media";
-    group = "media";
     openFirewall = true;
   };
 
-  systemd.tmpfiles.rules = [
-    "d /srv/media 2775 root media -"
-    "d /srv/media/music 2775 root media -"
-    "d /srv/media/downloads 2775 root media -"
-  ];
-
-  environment.systemPackages = map lib.lowPrio [
-    pkgs.curl
-    pkgs.gitMinimal
-    pkgs.jellyfin
-    pkgs.jellyfin-web
-    pkgs.jellyfin-ffmpeg
+  environment.systemPackages = [
   ];
 
   users.users.root.openssh.authorizedKeys.keys = [
